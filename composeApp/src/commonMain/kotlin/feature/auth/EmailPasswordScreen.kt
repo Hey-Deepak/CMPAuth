@@ -1,10 +1,7 @@
-package screen
-
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -28,11 +25,10 @@ import dev.gitlive.firebase.auth.auth
 import kotlinx.coroutines.launch
 
 
-class ScreenA : Screen {
+class EmailPasswordScreen : Screen{
 
     @Composable
     override fun Content() {
-
         val navigator = LocalNavigator.currentOrThrow
 
         val scope = rememberCoroutineScope()
@@ -42,7 +38,10 @@ class ScreenA : Screen {
         var userPassword by remember { mutableStateOf("") }
 
 
-        if (firebaseUser == null) {
+
+
+        if (firebaseUser == null)
+        {
             Column(
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Center,
@@ -54,14 +53,18 @@ class ScreenA : Screen {
                     onValueChange = { userEmail = it },
                     placeholder = { Text("Email Id") }
                 )
+
                 Spacer(modifier = Modifier.height(12.dp))
+
                 TextField(
                     value = userPassword,
-                    onValueChange = {userPassword = it},
+                    onValueChange = { userPassword = it },
                     placeholder = { Text("Password") },
                     visualTransformation = PasswordVisualTransformation()
                 )
+
                 Spacer(modifier = Modifier.height(24.dp))
+
                 Button(
                     onClick = {
                         scope.launch {
@@ -70,6 +73,7 @@ class ScreenA : Screen {
                                     email = userEmail,
                                     password = userPassword
                                 )
+                                firebaseUser = auth.currentUser
                             } catch (e: Exception) {
                                 auth.createUserWithEmailAndPassword(
                                     email = userEmail,
@@ -78,7 +82,7 @@ class ScreenA : Screen {
                             }
                         }
                     }
-                ){
+                ) {
                     Text("Sign in")
                 }
             }
@@ -97,34 +101,11 @@ class ScreenA : Screen {
                             firebaseUser = auth.currentUser
                         }
                     }
-                ){
+                ) {
                     Text(text = "Sign Out")
                 }
             }
         }
-
-        /*Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-
-            Text("Screen A")
-            Spacer(modifier = Modifier.height(12.dp))
-            Button(
-                onClick = {
-                    navigator.push(
-                        ScreenB(
-                            "Main Value"
-                        )
-                    )
-                }
-            ) {
-                Text("Go to Screen B")
-            }
-
-        }*/
-
     }
 
 }

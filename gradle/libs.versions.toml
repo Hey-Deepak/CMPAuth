@@ -19,6 +19,7 @@ navigationRuntimeKtx = "2.7.7"
 voyager = "1.0.0"
 koinCore = "3.5.3"
 gservices = "4.4.2"
+firebaseAuthKtx = "23.0.0"
 
 [libraries]
 firebase-auth = { module = "dev.gitlive:firebase-auth", version.ref = "firebaseAuth" }
@@ -40,6 +41,7 @@ voyager-screen-model = { module = "cafe.adriel.voyager:voyager-screenmodel", ver
 voyager-transitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyager" }
 voyager-koin = { module = "cafe.adriel.voyager:voyager-koin", version.ref = "voyager" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koinCore" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

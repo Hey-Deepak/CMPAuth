@@ -1,5 +1,7 @@
-package screen
+package feature.home
 
+import EmailPasswordScreen
+import LoginScreen
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -8,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -15,14 +18,12 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 
-data class ScreenB(
-    val txtArg: String = "Default"
-): Screen {
-
+class HomeScreen: Screen {
     @Composable
     override fun Content() {
 
         val navigator = LocalNavigator.currentOrThrow
+        val scope = rememberCoroutineScope()
 
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -30,20 +31,25 @@ data class ScreenB(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            Text("Screen B")
-            Spacer(modifier = Modifier.height(12.dp))
-            /*Button(
+            Button(
                 onClick = {
-                    navigator.push(ScreenA())
+                   navigator.push(LoginScreen())
                 }
             ){
-                Text("Go to Screen A")
-            }*/
+                Text("Login with Gmail")
+            }
 
-            Text("Txt Arg => $txtArg")
+            Spacer(modifier = Modifier.height(12.dp))
+
+            Button(
+                onClick = {
+                   navigator.push(EmailPasswordScreen())
+                }
+            ){
+                Text("Login with Email-Password")
+            }
 
         }
 
     }
-
 }

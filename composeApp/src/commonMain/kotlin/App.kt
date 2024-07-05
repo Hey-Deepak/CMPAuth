@@ -18,7 +18,8 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import cmpauth.composeapp.generated.resources.Res
 import cmpauth.composeapp.generated.resources.compose_multiplatform
-import screen.ScreenA
+import feature.home.HomeScreen
+
 
 @Composable
 @Preview
@@ -28,12 +29,12 @@ fun App() {
         Scaffold(
             topBar = {
                 TopAppBar {
-                    Text("Voyager Navigation")
+                    Text("CMP-Auth")
                 }
             }
         ) { paddingValues ->
             Navigator(
-                ScreenA()
+                HomeScreen()
             ) { navigator ->
                 SlideTransition(
                     navigator = navigator,

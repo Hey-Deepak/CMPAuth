@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "115628539125",
+    "project_id": "firebaseauth-428310",
+    "storage_bucket": "firebaseauth-428310.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115628539125:android:b4ac205f43f0abb8a559bc",
+        "android_client_info": {
+          "package_name": "com.cmp.auth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNQ-csfInADYxWZ8e2kW2ZxEYXCMfQ8D4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

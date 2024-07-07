@@ -1,7 +1,7 @@
 package feature.home
 
-import EmailPasswordScreen
-import LoginScreen
+import feature.auth.screen.EmailPasswordScreen
+import feature.auth.screen.LoginScreen
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

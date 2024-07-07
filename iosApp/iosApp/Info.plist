@@ -47,4 +47,19 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
+
+<key>GIDServerClientID</key>
+<string>AIzaSyDMiaPSm2X5MW-3HXu8MRzjY2vqEDppZr4</string>
+
+<key>GIDClientID</key>
+<string>AIzaSyBcSa42KmN43r2puIavTyI5JtVVzAzIvkQ</string>
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>YOUR_DOT_REVERSED_IOS_CLIENT_ID</string>
+    </array>
+  </dict>
+</array>
 </plist>
